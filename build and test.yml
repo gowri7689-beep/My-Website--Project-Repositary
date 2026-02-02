@@ -1,0 +1,19 @@
+YAML
+name: Build and Test
+
+on:
+  push:
+    branches: [ main ] # Run on pushes to the main branch
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # Run on Ubuntu virtual machine
+
+    steps:
+      - uses: actions/checkout@v3 # Checkout code from the repository
+      
+      - name: Install dependencies 
+        run: npm install # Install any required dependencies
+        
+      - name: Run tests 
+ run: npm test # Run your automated tests
